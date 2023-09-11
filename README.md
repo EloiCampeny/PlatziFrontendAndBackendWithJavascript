@@ -7,3 +7,4 @@ Within this repository, I document my progress in the Platzi Frontend and Backen
 ## Completed Courses:
 
 - Frontend Developer Course
+- Curso Práctico de Frontend Developer
