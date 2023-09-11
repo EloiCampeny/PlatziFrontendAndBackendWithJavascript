@@ -5,4 +5,5 @@ Platzi's Frontend and Backend with Javascript program is a career consisting of 
 Within this repository, I document my progress in the Platzi Frontend and Backend con Javascript career.
 
 ## Completed Courses:
+
 - Frontend Developer Course
