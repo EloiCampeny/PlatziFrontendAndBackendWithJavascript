@@ -9,3 +9,4 @@ Within this repository, I document my progress in the Platzi Frontend and Backen
 - Frontend Developer Course
 - Curso Práctico de Frontend Developer
 - Curso Básico de JavaScript
+- Curso Práctico de JavaScript
