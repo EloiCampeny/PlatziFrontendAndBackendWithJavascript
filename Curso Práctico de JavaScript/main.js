@@ -1,10 +1,12 @@
 const menuEmail = document.querySelector(".navbar-email");
 const desktopMenu = document.querySelector(".desktop-menu");
 const menuIcon = document.querySelector(".menu");
+const productDetailCloseIcon = document.querySelector(".product-detail-close");
 const shoppingCardIcon = document.querySelector(".navbar-shopping-cart");
 const mobileMenu = document.querySelector(".mobile-menu");
-const asideProductDetail = document.querySelector(".product-detail");
+const shoppingCardContainer = document.querySelector("#shoppingCardContainer");
 const cardsContainer = document.querySelector(".cards-container");
+const productDetailContainer = document.querySelector("#productDetail");
 
 const productList = [];
 
@@ -21,12 +23,14 @@ for (let i=0; i<20; i++) {
 menuEmail.addEventListener("click",toggleDesktopMenu);
 menuIcon.addEventListener("click",toggleMobileMenu);
 shoppingCardIcon.addEventListener("click",toggleShoppingCard);
+productDetailCloseIcon.addEventListener("click",closeProductDetailAside);
 
 function closeWindows() {
 
     desktopMenu.classList.add("inactive");
     mobileMenu.classList.add("inactive");
-    asideProductDetail.classList.add("inactive");
+    shoppingCardContainer.classList.add("inactive");
+    productDetailContainer.classList.add("inactive");
 
 }
 
@@ -53,30 +57,25 @@ function toggleMobileMenu() {
 }
 
 function toggleShoppingCard() {
-    const isShoppingCardClosed = asideProductDetail.classList.contains("inactive");
+    const isShoppingCardClosed = shoppingCardContainer.classList.contains("inactive");
 
     if (isShoppingCardClosed) {
         closeWindows();
-        asideProductDetail.classList.remove("inactive");
+        shoppingCardContainer.classList.remove("inactive");
     } else {
-        asideProductDetail.classList.add("inactive");
+        shoppingCardContainer.classList.add("inactive");
     }  
 }
 
-/*  
-<div class="product-card">
-    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="product-img">
-    <div class="product-info">
-        <div>
-            <p>$ 120.00</p>
-            <p>Bike</p>
-        </div>
-        <figure>
-            <img src="./icons/bt_add_to_cart.svg" alt="">
-        </figure>
-    </div>
-</div>  
-*/
+function openProductDetailAside() {
+    closeWindows();
+    productDetailContainer.classList.remove("inactive");
+}
+
+function closeProductDetailAside() {
+    productDetailContainer.classList.add("inactive");
+}
+
 
 function createMatrixOfProducts(productList) {
 
@@ -117,6 +116,7 @@ function createMatrixOfProducts(productList) {
 
         cardsContainer.append(productCard);
 
+        cardsContainer.addEventListener("click",openProductDetailAside);
     }
 }
 
